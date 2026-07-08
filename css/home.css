@@ -1,0 +1,71 @@
+/* Home page — index.html */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 111px 24px 0;
+}
+
+.hero__mark {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+
+.nav-marks ul {
+  list-style: none;
+  margin: 133px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--nav-mark-gap);
+}
+
+.nav-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--nav-mark-size);
+  height: var(--nav-mark-size);
+  gap: 12px;
+}
+
+.nav-mark__icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.nav-mark {
+  position: relative;
+}
+
+.nav-mark__label {
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.signature {
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero__mark {
+    width: 180px;
+    height: 180px;
+  }
+
+  :root {
+    --nav-mark-size: 160px;
+  }
+}

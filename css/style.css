@@ -1,0 +1,217 @@
+/* anthonydfrederick.com — shared styles */
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../assets/fonts/rubik/Rubik-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-forest: #142118;
+  --color-cream-text: #fff9ee;
+  --color-paper: #fef1e2;
+  --color-paper-text: #142118;
+  --color-gold: #fcd762;
+
+  --font-body: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --nav-mark-size: 200px;
+  --nav-mark-gap: 20px;
+
+  --max-content-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-forest);
+  color: var(--color-cream-text);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+body.paper {
+  background-color: var(--color-paper);
+  color: var(--color-paper-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* Generic image/graphic placeholder */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed currentColor;
+  opacity: 0.5;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 8px;
+}
+
+/* Footer, shared across all pages */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+  font-size: 14px;
+}
+
+.site-footer__mark.placeholder {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.site-footer__legal {
+  opacity: 0.85;
+  flex: 1;
+  text-align: center;
+}
+
+.site-footer__legal a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 16px;
+}
+
+.site-footer__social .placeholder {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-size: 0;
+}
+
+.signature {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.signature .placeholder {
+  width: 80px;
+  height: 60px;
+}
