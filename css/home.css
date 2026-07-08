@@ -12,8 +12,8 @@
 }
 
 /* Hero mark is also a filmstrip sprite (48 square frames), same
-   calc()-based frame math as the nav icons below, but this one
-   auto-plays continuously rather than waiting for hover.
+   calc()-based frame math as the nav icons below, and same
+   hover-to-play pattern — idle on frame 0 until hovered.
    Uses "SPRITE 8-web.png" — a resized copy of the source file. The
    original is 51,888px wide, which exceeds the browser's max texture
    dimension for CSS background-image (commonly 16,384px), so it
@@ -29,6 +29,9 @@
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: calc(var(--hero-mark-size) * 48) 100%; /* 48 frames, 220px each = 10560px */
+}
+
+.hero:hover .hero__mark {
   animation: play-hero-sprite 3.3s steps(48) infinite;
 }
 
