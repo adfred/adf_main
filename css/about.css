@@ -1,0 +1,132 @@
+/* About page — about.html */
+
+body.paper {
+  --card-border: 1px solid var(--color-forest);
+}
+
+.about-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.about-nav__group {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.about-nav__group--right {
+  justify-content: flex-end;
+}
+
+.about-nav__logo.placeholder {
+  width: 88px;
+  height: 60px;
+  flex-shrink: 0;
+  margin: 0 24px;
+}
+
+.about-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.about-hero__image.placeholder {
+  width: 100%;
+  aspect-ratio: 627 / 720;
+  border-radius: 5px;
+}
+
+.card {
+  max-width: 710px;
+  margin: 0 auto 32px;
+  border: var(--card-border, 1px solid var(--color-forest));
+  border-radius: 20px;
+  padding: 40px 48px;
+}
+
+.card--letter h1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 0 0 32px;
+  color: #213627;
+}
+
+.card--letter p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 24px;
+  color: #213627;
+}
+
+.card--letter a {
+  color: inherit;
+}
+
+.card--letter p:last-child {
+  margin-bottom: 0;
+}
+
+.cta-row {
+  display: flex;
+  gap: 24px;
+  max-width: 710px;
+  margin: 0 auto 32px;
+  padding: 0 24px;
+}
+
+.cta-row .card {
+  flex: 1;
+  margin: 0;
+  max-width: none;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.card p:last-of-type {
+  margin-bottom: 24px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #e6b856;
+  color: #3c3c3c;
+  border: 1px solid var(--color-forest);
+  border-radius: 15px;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card--contact {
+  padding: 40px 48px;
+}
+
+@media (max-width: 720px) {
+  .about-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+}
