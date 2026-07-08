@@ -25,11 +25,15 @@ body.paper {
   justify-content: flex-end;
 }
 
-.about-nav__logo {
-  width: 88px;
-  height: 88px;
+.about-nav__logo-link {
+  display: block;
   flex-shrink: 0;
   margin: 0 24px;
+}
+
+.about-nav__logo {
+  width: 96px;
+  height: 96px;
   object-fit: contain;
 }
 
@@ -112,6 +116,12 @@ body.paper {
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2a2a2a;
+  color: #fef1e2;
 }
 
 .card--contact {

@@ -30,11 +30,15 @@ body.coaching {
   justify-content: flex-end;
 }
 
-.coaching-nav__logo {
-  width: 88px;
-  height: 88px;
+.coaching-nav__logo-link {
+  display: block;
   flex-shrink: 0;
   margin: 0 24px;
+}
+
+.coaching-nav__logo {
+  width: 96px;
+  height: 96px;
   font-size: 10px;
   object-fit: contain;
 }
@@ -86,6 +90,11 @@ body.coaching {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.button--outline:hover {
+  background-color: #2a2a2a;
 }
 
 .coaching-section {
