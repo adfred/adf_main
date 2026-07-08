@@ -174,12 +174,13 @@ button:focus-visible {
   font-size: 14px;
 }
 
-.site-footer__mark.placeholder {
+.site-footer__mark {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   font-size: 10px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .site-footer__legal {
@@ -211,6 +212,7 @@ button:focus-visible {
   padding: 24px 0;
 }
 
+.signature img,
 .signature .placeholder {
   width: 80px;
   height: 60px;

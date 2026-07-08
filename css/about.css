@@ -25,11 +25,12 @@ body.paper {
   justify-content: flex-end;
 }
 
-.about-nav__logo.placeholder {
+.about-nav__logo {
   width: 88px;
-  height: 60px;
+  height: 88px;
   flex-shrink: 0;
   margin: 0 24px;
+  object-fit: contain;
 }
 
 .about-hero {
@@ -38,10 +39,12 @@ body.paper {
   margin-bottom: 32px;
 }
 
-.about-hero__image.placeholder {
+.about-hero__image {
+  display: block;
   width: 100%;
   aspect-ratio: 627 / 720;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .card {
