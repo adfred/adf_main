@@ -1,16 +1,58 @@
 /* Home page — index.html */
 
+:root {
+  --hero-mark-size: 220px;
+}
+
 .hero {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 111px 24px 0;
 }
 
+/* Hero mark is also a filmstrip sprite (48 square frames), same
+   calc()-based frame math as the nav icons below, but this one
+   auto-plays continuously rather than waiting for hover.
+   Uses "SPRITE 8-web.png" — a resized copy of the source file. The
+   original is 51,888px wide, which exceeds the browser's max texture
+   dimension for CSS background-image (commonly 16,384px), so it
+   silently fails to render as a background (confirmed: the same file
+   draws fine via <canvas>, which doesn't hit that limit the same way).
+   This copy is 12,288px wide (256px/frame), well under the limit. */
 .hero__mark {
-  width: 220px;
-  height: 220px;
+  display: block;
+  width: var(--hero-mark-size);
+  height: var(--hero-mark-size);
   border-radius: 50%;
-  object-fit: contain;
+  background-image: url("../assets/media/SPRITE%208-web.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: calc(var(--hero-mark-size) * 48) 100%; /* 48 frames, 220px each = 10560px */
+  animation: play-hero-sprite 3.3s steps(48) infinite;
+}
+
+@keyframes play-hero-sprite {
+  to {
+    background-position: calc(var(--hero-mark-size) * -48) 0;
+  }
+}
+
+/* Hidden until hover, but not display:none/sr-only, so it stays in
+   the accessibility tree and the reveal is a pure opacity fade with
+   no layout shift. */
+.hero__tagline {
+  margin: 16px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero:hover .hero__tagline,
+.hero:focus-within .hero__tagline {
+  opacity: 1;
 }
 
 .nav-marks ul {
@@ -111,12 +153,8 @@
     padding-top: 72px;
   }
 
-  .hero__mark {
-    width: 180px;
-    height: 180px;
-  }
-
   :root {
+    --hero-mark-size: 180px;
     --nav-mark-size: 160px;
   }
 }
