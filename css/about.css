@@ -25,6 +25,18 @@ body.paper {
   justify-content: flex-end;
 }
 
+.about-nav a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.about-nav a:hover {
+  background-color: #2a2a2a;
+  color: #fef1e2;
+}
+
 .about-nav__logo-link {
   display: block;
   flex-shrink: 0;
@@ -116,12 +128,6 @@ body.paper {
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.button:hover {
-  background-color: #2a2a2a;
-  color: #fef1e2;
 }
 
 .card--contact {
