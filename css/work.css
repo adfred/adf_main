@@ -1,0 +1,149 @@
+/* Work page — work.html */
+
+.work-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.work-nav__group {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.work-nav__group--right {
+  justify-content: flex-end;
+}
+
+.work-nav__logo.placeholder {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin: 0 24px;
+  font-size: 10px;
+}
+
+.work-main {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  color: #f5e2cc;
+}
+
+.work-main h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 48px 0 16px;
+}
+
+.work-main h1:first-child {
+  margin-top: 0;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project {
+  position: relative;
+}
+
+.project__link {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #f5e2cc;
+  padding: 6px 0;
+}
+
+/* Slow rightward drift on hover — matches the live site's custom
+   per-button animation: 10s, cubic-bezier(0.7, 0.8, 0.6, 1), 0 -> 200px,
+   held at the end position (forwards) until the mouse leaves. */
+@keyframes project-link-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.project__link:hover {
+  animation: project-link-drift 10s cubic-bezier(0.7, 0.8, 0.6, 1) forwards;
+}
+
+/* Fixed preview pane: always reveals in the same screen-right spot,
+   regardless of which project link (or scroll position) triggered it. */
+.project__preview {
+  position: fixed;
+  top: 220px;
+  left: 50%;
+  right: -300px;
+  opacity: 0;
+  transform: translateX(0);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 2;
+}
+
+.project:hover .project__preview {
+  opacity: 1;
+  transform: translateX(-320px);
+}
+
+.project__preview-image.placeholder {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  border-radius: 11px;
+  font-size: 12px;
+}
+
+/* Caption sits in its own translucent box, layered over the image, and
+   fades in half a second after the image starts (transition-delay). */
+.project__preview-caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  margin: 0;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  font-size: 12px;
+  color: #f5e2cc;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s;
+}
+
+.project:hover .project__preview-caption {
+  opacity: 1;
+}
+
+.project__preview-caption strong {
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .work-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Hover-reveal previews are desktop-only, matching the original. */
+  .project__preview {
+    display: none;
+  }
+}
