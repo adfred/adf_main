@@ -174,12 +174,17 @@ button:focus-visible {
   font-size: 14px;
 }
 
+.site-footer__mark-link {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
 .site-footer__mark {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   font-size: 10px;
-  flex-shrink: 0;
   object-fit: contain;
 }
 
@@ -187,11 +192,11 @@ button:focus-visible {
   opacity: 0.85;
   flex: 1;
   text-align: center;
+  font-size: 11px;
 }
 
 .site-footer__legal a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
 }
 
 .site-footer__social {
